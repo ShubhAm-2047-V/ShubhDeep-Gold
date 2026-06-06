@@ -16,11 +16,8 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Fallback to the AIza key if Vercel Environment Variables aren't set properly
-    const apiKey = process.env.GEMINI_API_KEY || "AIzaSyBc7FCuOYtH2hgaxTrxP-ammbcp7xS3gRY";
-    if (!apiKey) {
-      return res.status(500).json({ error: "Server missing GEMINI_API_KEY environment variable" });
-    }
+    // Strictly enforcing the new AIza key because Vercel env variables still contain the old broken AQ key
+    const apiKey = "AIzaSyBc7FCuOYtH2hgaxTrxP-ammbcp7xS3gRY";
 
     const genAI = new GoogleGenerativeAI(apiKey);
     

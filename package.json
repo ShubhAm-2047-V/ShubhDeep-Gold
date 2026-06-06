@@ -1,0 +1,12 @@
+{
+  "name": "gold-shop-backend",
+  "version": "1.0.0",
+  "description": "Vercel Serverless Backend for ShubDeep Gold",
+  "main": "api/rates.js",
+  "scripts": {
+    "start": "node api/rates.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.11.1"
+  }
+}

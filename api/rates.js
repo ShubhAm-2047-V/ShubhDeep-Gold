@@ -16,7 +16,8 @@ export default async function handler(req, res) {
   }
 
   try {
-    const apiKey = process.env.GEMINI_API_KEY;
+    // Fallback to the AIza key if Vercel Environment Variables aren't set properly
+    const apiKey = process.env.GEMINI_API_KEY || "AIzaSyBc7FCuOYtH2hgaxTrxP-ammbcp7xS3gRY";
     if (!apiKey) {
       return res.status(500).json({ error: "Server missing GEMINI_API_KEY environment variable" });
     }

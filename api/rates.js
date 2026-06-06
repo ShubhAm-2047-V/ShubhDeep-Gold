@@ -23,9 +23,8 @@ export default async function handler(req, res) {
 
     const genAI = new GoogleGenerativeAI(apiKey);
     
-    // Using antigravity-preview-05-2026 as a fallback since their internal key has access to it.
-    // If they change to a standard key, they can switch this to gemini-1.5-flash.
-    const model = genAI.getGenerativeModel({ model: "antigravity-preview-05-2026" });
+    // Use standard gemini-1.5-flash which has free tier quota available
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
     const prompt = `
       What is today's approximate 24K and 22K gold rate, and silver rate per gram in Indian Rupees (INR)?
